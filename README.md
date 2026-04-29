@@ -152,6 +152,19 @@ Result:
 - Faster execution
 - Reduced scanning
 
+## Execution Time Comparison (CSV vs Parquet)
+
+The following table presents the execution times of the implemented queries using CSV (or default) and Parquet formats. The results demonstrate the performance benefits of columnar storage and query optimization techniques such as partition pruning and broadcast joins.
+
+| Query | CSV / Default Time (sec) | Parquet Time (sec) | Speedup |
+|------|---------------------------|--------------------|--------|
+| Q1 | 468 | 54 | 8.7× |
+| Q2 | — | 186 | — |
+| Q3 | 438 | 30 | 14.6× |
+| Q4 | 840 | 32 | 26.3× |
+| Q5 | 102 | 32 | 3.2× |
+| Q6 | — | 78 | — |
+
 ---
 
 ### Join Strategy Analysis
