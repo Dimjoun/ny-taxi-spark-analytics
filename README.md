@@ -165,6 +165,10 @@ The following table presents the execution times of the implemented queries usin
 | Q5 | 102 | 32 | 3.2× |
 | Q6 | — | 78 | — |
 
+## Performance Comparison
+
+![Execution Time Chart](screenshots/execution_time_chart.png)
+
 ---
 
 ### Join Strategy Analysis
