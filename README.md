@@ -1,4 +1,3 @@
-# ny-taxi-spark-analytics
 # NY Taxi Spark Analytics
 
 Big Data Analytics project using Apache Spark and Hadoop on the NYC Yellow Taxi dataset.
@@ -201,4 +200,4 @@ q6/
 
 ## Author
 
-dtzounidis
+Dimitrios Tzounidis, AM: 2121241
