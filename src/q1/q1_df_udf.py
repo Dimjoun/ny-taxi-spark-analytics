@@ -9,7 +9,6 @@ df = spark.read.parquet(
     "hdfs://hdfs-namenode:9000/user/dtzounidis/data/parquet_v2/yellow_2015_typed"
 )
 
-# UDF for haversine distance
 def haversine_udf(lat1, lon1, lat2, lon2):
     if None in (lat1, lon1, lat2, lon2):
         return None
