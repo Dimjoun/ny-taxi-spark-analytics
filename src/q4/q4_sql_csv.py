@@ -3,25 +3,21 @@ from pyspark.sql.functions import hour, col, to_date
 
 spark = SparkSession.builder.appName("Q4_SQL_CSV").getOrCreate()
 
-# Read CSV dataset
 trips = spark.read.csv(
     "hdfs://hdfs-namenode:9000/data/yellow_tripdata_2024.csv",
     header=True,
     inferSchema=True
 )
 
-# Read zones parquet
 zones = spark.read.parquet(
     "hdfs://hdfs-namenode:9000/user/dtzounidis/data/parquet_v2/zones"
 )
 
-# Add pickup_date column (για να μπορούμε να φιλτράρουμε)
 trips = trips.withColumn(
     "pickup_date",
     to_date(col("tpep_pickup_datetime"))
 )
 
-# Filters
 filtered = (
     trips
     .filter(col("pickup_date").isin("2024-01-17", "2024-01-18", "2024-01-19"))
@@ -50,7 +46,6 @@ ORDER BY avg_tip_rate_card DESC
 
 result = spark.sql(query)
 
-# IMPORTANT για την εργασία
 result.explain(True)
 
 result.show(truncate=False)
