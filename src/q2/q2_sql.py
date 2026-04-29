@@ -7,8 +7,6 @@ df = spark.read.parquet(
     "hdfs://hdfs-namenode:9000/user/dtzounidis/data/parquet_v2/yellow_2015_typed"
 )
 
-# Personalization
-# h = 1, L = 4, K = 11
 filtered = (
     df
     .filter(hour(col("tpep_pickup_datetime")).isin(1, 2, 3, 4))
